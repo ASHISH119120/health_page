@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - Policies365</title>
+  <meta name="description" content="Thank you for choosing Policies365. Our advisor will contact you shortly regarding your health insurance request.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXZCX4R8EE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZXZCX4R8EE');
+  </script>
+
+  <style>
+    /* ===== Base Styles ===== */
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f4f6fa;
+      color: #2c3e50;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* ===== Card Styles ===== */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      max-width: 650px;
+      width: 100%;
+      padding: 40px 30px;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .card.thankyou { border-top: 5px solid #0056b3; }
+
+    /* ===== Check Icon ===== */
+    .check-wrapper {
+      display: inline-block;
+      background: linear-gradient(145deg, #e0f7ff, #fff);
+      border-radius: 50%;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,91,187,0.2);
+      margin-bottom: 25px;
+      animation: popIn 0.6s ease-out, float 3s ease-in-out infinite;
+    }
+
+    .check-wrapper img {
+      width: 80px;
+      animation: bounceIn 0.8s ease-out;
+    }
+
+    @keyframes popIn {
+      0% {transform: scale(0); opacity: 0;}
+      60% {transform: scale(1.2); opacity: 1;}
+      100% {transform: scale(1);}
+    }
+
+    @keyframes float {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-8px);}
+    }
+
+    @keyframes bounceIn {
+      0% {transform: scale(0.3); opacity: 0;}
+      50% {transform: scale(1.1); opacity: 1;}
+      100% {transform: scale(1);}
+    }
+
+    /* ===== Typography ===== */
+    h1 {
+      font-size: 2rem;
+      color:#003d80;
+      margin:20px 0 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color:#0056b3;
+      margin:20px 0 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color:#555;
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+
+    /* ===== Buttons ===== */
+    a.button {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #0056b3;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    a.button:hover { background: #003d80; }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align:center;
+      padding:20px 0;
+      font-size:0.9rem;
+      color:#777;
+      background:#f4f6fa;
+    }
+
+    footer a {
+      color:#0056b3;
+      text-decoration:none;
+    }
+    footer a:hover { text-decoration:underline; }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Thank You Card -->
+    <div class="card thankyou">
+      
+      <div class="check-wrapper">
+        <img src="https://cdn-icons-png.flaticon.com/128/14090/14090371.png" alt="Success">
+      </div>
+
+      <h1>Your Health Insurance Request Is Received</h1>
+
+      <p>
+        Thank you for choosing <strong>Policies365</strong>.  
+        Our health insurance expert will contact you shortly to understand your requirements 
+        and suggest the best plans for you and your family.
+      </p>
+
+      <h2>What Happens Next?</h2>
+
+      <p>
+        Our advisor will guide you with:
+        <br>• Plan comparison  
+        <br>• Benefits & inclusions  
+        <br>• Premium options  
+        <br>• Cashless hospital networks  
+      </p>
+
+      <a href="https://www.policies365.com/health-insurance" class="button">
+        Explore Health Insurance Plans
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const submitted = params.get("submitted");
+
+    // Block manual direct access
+    if (submitted !== "1") {
+        document.body.innerHTML = `
+          <div style="max-width:600px;margin:80px auto;text-align:center;">
+            <h2 style="color:#cc0000;font-family:Poppins;">
+              ⚠️ Access Denied
+            </h2>
+            <p style="font-size:18px;color:#555;">
+              This page cannot be opened directly.
+            </p>
+          </div>
+        `;
+
+        // Stop Google Analytics tracking
+        window.gtag = function() {};
+    }
+  </script>
+
+  <footer>
+    &copy; 2025 Policies365. All Rights Reserved. |
+    <a href="https://www.policies365.com/privacy-policy">Privacy Policy</a>
+  </footer>
+
+</body>
+</html>
